@@ -1,14 +1,18 @@
 # CLAUDE.md
 
+We're building the app described in @SPEC.md. read that file for general artchitectural tasks or to double-check the exact database structure, tech stack or application architecture.
+
+Keep your replay extremely concis and focus on conveying the key information. No unnecessary fluff, no long code snippet.
+
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Commands
 
 ```bash
-bun dev          # Start development server on http://localhost:3000
-bun build        # Build for production
-bun start        # Run production build
-bun lint         # Run ESLint
+bun run dev      # Start development server on http://localhost:3000
+bun run build    # Build for production
+bun run start    # Run production build
+bun run lint     # Run ESLint
 ```
 
 This project uses **Bun** as the runtime and package manager (not npm/yarn/pnpm). Always use `bun` for installing packages and running scripts.
@@ -22,7 +26,7 @@ Copy `.env.example` to `.env.local` before running. Required variables:
 
 ## Architecture
 
-This is a **Note Taking Web App** — a Next.js (App Router) application where authenticated users can create, edit, delete, and publicly share rich-text notes. The spec is in `SPEC.MD`.
+This is a **Note Taking Web App** — a Next.js (App Router) application where authenticated users can create, edit, delete, and publicly share rich-text notes. The spec is in `SPEC.md`.
 
 ### Stack
 
@@ -63,7 +67,7 @@ app/
       [id]/share/route.ts       # POST toggle sharing
 ```
 
-### Data Layer Files (to be created)
+### Data Layer Files
 
 - `lib/db.ts` — Bun SQLite singleton + `query<T>`, `get<T>`, `run` helpers
 - `lib/notes.ts` — note repository functions (`createNote`, `getNoteById`, etc.)
